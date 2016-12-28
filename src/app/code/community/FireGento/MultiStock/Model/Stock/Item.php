@@ -35,8 +35,16 @@ class FireGento_MultiStock_Model_Stock_Item extends Mage_CatalogInventory_Model_
      */
     public function getStockId()
     {
+        $stockId = Mage_CatalogInventory_Model_Stock::DEFAULT_STOCK_ID;
+
+        $customerCanDropshipOnly = Mage::helper("codekunst_salelimitation")->customerCanDropshipOnly();
+
+        if($customerCanDropshipOnly){
+            $stockId = 2;
+        }
+
         if (!$this->hasData('stock_id')) {
-            $this->setData('stock_id', Mage_CatalogInventory_Model_Stock::DEFAULT_STOCK_ID);
+            $this->setData('stock_id', $stockId);
         }
 
         return $this->getData('stock_id');

@@ -1,5 +1,5 @@
 {
-  "name": "firegento/multistock",
+  "name": "haix/multistock",
   "license": ["GPL-3.0"],
   "type": "magento-module",
   "description": "FireGento MultiStock will give you more than one stock and multiple stock items.",
