@@ -61,7 +61,6 @@ class FireGento_MultiStock_Block_Adminhtml_Multistock_Grid extends Mage_Adminhtm
     {
         $stockCollection = Mage::getModel('firegento_multistock/stock')->getCollection();
         /* @var $stockCollection FireGento_MultiStock_Model_Resource_Stock_Collection */
-        $stockCollection->excludeDefaultStock();
         $stockCollection->joinStockItemsForProduct($this->getProduct());
         if (strlen($this->getRequest()->getParam('sort')) && strlen($this->getRequest()->getParam('dir'))) {
             $dir = strtoupper($this->getRequest()->getParam('dir'));

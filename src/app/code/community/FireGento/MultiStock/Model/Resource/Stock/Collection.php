@@ -37,14 +37,6 @@ class FireGento_MultiStock_Model_Resource_Stock_Collection extends Mage_Core_Mod
     }
 
     /**
-     * exclude the default stock
-     */
-    public function excludeDefaultStock()
-    {
-        $this->addFieldToFilter('`main_table`.`stock_id`', array('gt' => 1));
-    }
-
-    /**
      * Join tables to have all stock items.
      *
      * @param  Mage_Catalog_Model_Product $product the product to add the data
